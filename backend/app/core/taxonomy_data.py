@@ -3,48 +3,48 @@ taxonomy_data = {
         "Level": "Class",
         "Artiodactyla": {
             "Level": "Order",
-            "Ancodonta": {
+            "Ancodonta": { # ungulates
                 "Level": "Infraorder",
                 "Bovidae": { "Level": "Family" },
                 "Cervidae": { "Level": "Family" },
                 "Giraffidae": { "Level": "Family" },
                 "Hippopotamidae": { "Level": "Family" }
             },
-            "Cetacea": {
+            "Cetacea": { # marine mammals
                 "Level": "Infraorder",
-                "Balaenidae": {
+                "Mysticeti": { # baleen whales
                     "Level": "Parvorder",
-                    "Balaenidae": { "Level": "Family" },
+                    "Balaenidae": { "Level": "Family" }, # right whale, bowhead whale
                     "Balaenopteridae": { "Level": "Family" }, # rorquals
-                    "Cetotheriidae": { "Level": "Family" },
-                    "Eschrichtiidae": { "Level": "Family" },
+                    "Eschrichtiidae": { "Level": "Family" }, # gray whales
                 },
-                "Odontoceti": {
+                "Odontoceti": { # toothed whales
                     "Level": "Parvorder",
-                    "Delphinida": { "Level": "Clade" },
-                    "Physeteroidea": { "Level": "Superfamily" },
-                    "Platanistidae": { "Level": "Family" },
-                    "Ziphiidae": { "Level": "Family" },
+                    "Delphinoidea": { "Level": "Family" }, # orca, vaquita, dolphins
+                    "Physeteroidea": { "Level": "Superfamily" }, # sperm whale, pygmy sperm whale, dwarf sperm whale
+                    "Phocoenidae": { "Level": "Family" }, # Porpoises
+                    "Platanistidae": { "Level": "Family" }, # river dolphins
+                    "Ziphiidae": { "Level": "Family" }, # beaked whales
                 }
             }  
         },
         "Carnivora": {
             "Level": "Order",
-            "Caniformia": {
+            "Caniformia": { # dog-like carnivores
                 "Level": "Suborder",
-                "Canidae": { "Level": "Family" },
-                "Ursidae": { "Level": "Family" },
+                "Canidae": { "Level": "Family" }, # dogs, wolves, foxes
+                "Ursidae": { "Level": "Family" }, # bears
             },
-            "Feliformia": {
+            "Feliformia": { # cat-like carnivores
                 "Level": "Suborder",
-                "Felidae": { "Level": "Family" },
-                "Hyaenidae": { "Level": "Family" },
+                "Felidae": { "Level": "Family" }, # big cats, small cats, cheetahs
+                "Hyaenidae": { "Level": "Family" }, # hyaenas, aardwolves
             }
         },
         "Dermoptera": {
             "Level": "Order",
-            "Chiroptera": { "Level": "Family" },
-            "Cynocephalidae": { "Level": "Family" },
+            "Chiroptera": { "Level": "Family" }, # bats
+            "Cynocephalidae": { "Level": "Family" }, # colugos
         },
         "Eulipotyphla": {
             "Level": "Order",
@@ -54,14 +54,18 @@ taxonomy_data = {
         },
         "Lagomorpha": {
             "Level": "Order",
-            "Leporidae": { "Level": "Family" },
-            "Ochotonidae": { "Level": "Family" },
+            "Leporidae": { "Level": "Family" }, # rabbits, hares
+            "Ochotonidae": { "Level": "Family" }, # pikas
         },
-        "Perissodactyla": {
+        "Macroscelidea": {
             "Level": "Order",
-            "Equidae": { "Level": "Family" },
+            "Macroscelidae": { "Level": "Family" }, # elephant shrews
+        },
+        "Perissodactyla": { # odd-toed ungulates
+            "Level": "Order",
+            "Equidae": { "Level": "Family" }, # horses, donkeys, zebras
             "Rhinocerotidae": { "Level": "Family" },
-            "Tapiridae": { "Level": "Family" }
+            "Tapiridae": { "Level": "Family" } # tapirs
         },
         "Primates": {
             "Level": "Order",
@@ -72,7 +76,7 @@ taxonomy_data = {
                     "Catarrhines": {
                         "Level": "Parvorder",
                         "Cercopithecidae": { "Level": "Family" },
-                        "Homonidae": { "Level": "Family" },
+                        "Homonidae": { "Level": "Family" }, # great apes
                     },
                     "Platyrrhines": {
                         "Level": "Parvorder",
@@ -100,17 +104,17 @@ taxonomy_data = {
             "Cricetidae": { "Level": "Family" },
             "Erethizonditae": { "Level": "Family" },
             "Hystricidae": { "Level": "Family" },
-            "Muridae": { "Level": "Family" }, 
-            "Sciuridae": { "Level": "Family" },
+            "Muridae": { "Level": "Family" }, # true mouse/rat family
+            "Sciuridae": { "Level": "Family" }, # squirrel family
         },
         "Sirenia": {
             "Level": "Order",
-            "Dugongidae": { "Level": "Family" },
-            "Trichechidae": { "Level": "Family" },
+            "Dugongidae": { "Level": "Family" }, # dugongs
+            "Trichechidae": { "Level": "Family" }, # manatees
         },
         "Tubulidentata": {
             "Level": "Order",
-            "Orycteropodidae": {"Level": "Family" },
+            "Orycteropodidae": {"Level": "Family" }, # aardvarks
         },
         "Hyraxes": {
             "Level": "Order",
