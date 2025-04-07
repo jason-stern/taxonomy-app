@@ -10,6 +10,20 @@ class Node:
     def add_child(self, child_node):
         self.children.append(child_node)
 
+    def find_path(self, target, path=None):
+        if path is None:
+            path = []
+        path.append(self)
+
+        if self.scientific_name.lower() == target.lower():
+            return path
+        for child in self.children:
+            result = child.find_path(target, path.copy())
+            if result:
+                return result
+            
+        return None
+
     def print_tree(self, indent=0):
         print(" " * indent + f"{self.level}: {self.scientific_name}")
         for child in self.children:
