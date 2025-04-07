@@ -3,10 +3,30 @@ taxonomy_data = {
         "Level": "Class",
         "Artiodactyla": {
             "Level": "Order",
-            "Bovidae": { "Level": "Family" },
-            "Cervidae": { "Level": "Family" },
-            "Giraffidae": { "Level": "Family" },
-            "Hippopotamidae": { "Level": "Family" }
+            "Ancodonta": {
+                "Level": "Infraorder",
+                "Bovidae": { "Level": "Family" },
+                "Cervidae": { "Level": "Family" },
+                "Giraffidae": { "Level": "Family" },
+                "Hippopotamidae": { "Level": "Family" }
+            },
+            "Cetacea": {
+                "Level": "Infraorder",
+                "Balaenidae": {
+                    "Level": "Parvorder",
+                    "Balaenidae": { "Level": "Family" },
+                    "Balaenopteridae": { "Level": "Family" }, # rorquals
+                    "Cetotheriidae": { "Level": "Family" },
+                    "Eschrichtiidae": { "Level": "Family" },
+                },
+                "Odontoceti": {
+                    "Level": "Parvorder",
+                    "Delphinida": { "Level": "Clade" },
+                    "Physeteroidea": { "Level": "Superfamily" },
+                    "Platanistidae": { "Level": "Family" },
+                    "Ziphiidae": { "Level": "Family" },
+                }
+            }  
         },
         "Carnivora": {
             "Level": "Order",
@@ -18,8 +38,19 @@ taxonomy_data = {
             "Feliformia": {
                 "Level": "Suborder",
                 "Felidae": { "Level": "Family" },
-                "Hyaenidae": {"Level": "Family" },
+                "Hyaenidae": { "Level": "Family" },
             }
+        },
+        "Dermoptera": {
+            "Level": "Order",
+            "Chiroptera": { "Level": "Family" },
+            "Cynocephalidae": { "Level": "Family" },
+        },
+        "Eulipotyphla": {
+            "Level": "Order",
+            "Erinaceidae": { "Level": "Family" },
+            "Soleonodontidae": { "Level": "Family" },
+            "Soricidae": { "Level": "Family" },
         },
         "Lagomorpha": {
             "Level": "Order",
@@ -62,9 +93,28 @@ taxonomy_data = {
         },
         "Rodentia": {
             "Level": "Order",
+            "Bathyergidae": { "Level": "Family" },
+            "Castoridae": { "Level": "Family" },
             "Caviidae": { "Level": "Family" },
+            "Chinchillidae": { "Level": "Family" },
+            "Cricetidae": { "Level": "Family" },
+            "Erethizonditae": { "Level": "Family" },
+            "Hystricidae": { "Level": "Family" },
             "Muridae": { "Level": "Family" }, 
             "Sciuridae": { "Level": "Family" },
+        },
+        "Sirenia": {
+            "Level": "Order",
+            "Dugongidae": { "Level": "Family" },
+            "Trichechidae": { "Level": "Family" },
+        },
+        "Tubulidentata": {
+            "Level": "Order",
+            "Orycteropodidae": {"Level": "Family" },
+        },
+        "Hyraxes": {
+            "Level": "Order",
+            "Proviidae": { "Level": "Family" },
         }
     }
 }
