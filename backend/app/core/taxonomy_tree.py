@@ -1,8 +1,9 @@
 from core.taxonomy_data import taxonomy_data
 
 class Node:
-    def __init__(self, scientific_name, level, data=None):
+    def __init__(self, scientific_name, common_name, level, data=None):
         self.scientific_name = scientific_name
+        self.common_name = common_name
         self.level = level
         self.data = data
         self.children = []
@@ -15,7 +16,7 @@ class Node:
             path = []
         path.append(self)
 
-        if self.scientific_name.lower() == target.lower():
+        if self.scientific_name.lower() == target.lower() or self.common_name.lower() == target.lower():
             return path
         for child in self.children:
             result = child.find_path(target, path.copy())
@@ -25,7 +26,7 @@ class Node:
         return None
 
     def print_tree(self, indent=0):
-        print(" " * indent + f"{self.level}: {self.scientific_name}")
+        print(" " * indent + f"{self.level}: {self.common_name} ({self.scientific_name})")
         for child in self.children:
             child.print_tree(indent + 1)
 
@@ -37,8 +38,9 @@ def build_tree_helper(taxonomy_data):
     for name, data in taxonomy_data.items():
         if isinstance(data, dict) and "Level" in data:
             level = data["Level"]
+            common_name = data["Common Name"]
             scientific_name = name
-            node = Node(scientific_name, level)
+            node = Node(scientific_name, common_name, level)
 
             # children
             for child_name, child_data in data.items():
