@@ -1,5 +1,6 @@
 from core.taxonomy_tree import build_tree
 from core.lca import find_lca
+from core.species_index import species_index
 
 def main():
     tree = build_tree()
@@ -19,18 +20,27 @@ def main():
             for node in tree:
                 node.print_tree()
         elif user_input == "t":
-            user_input_tosearch = input("Please enter the *scientific* taxonomical name of any Order/Family within Mammalia -- ").strip()
-            path = tree[0].find_path(user_input_tosearch)
-            if path == None:
-                print("No path found. Check your spelling?")
-                continue
-            for level in path:
-                print(f"{level.level}: {level.common_name} ({level.scientific_name})")
+            user_input_tosearch = input("Please enter the *scientific* taxonomical name of any Order/Family within Mammalia -- ").strip().lower()
+
+            if user_input_tosearch in species_index:
+                scientific_name = species_index[user_input_tosearch]
+                genus = scientific_name.split()[0]
+
+                path = tree[0].find_path(genus)
+                if path == None:
+                    print("No path found. Check your spelling?")
+                    continue
+
+                print(f"Found '{scientific_name}':")
+                for level in path:
+                    print(f"{level.level}: {level.common_name} ({level.scientific_name})")
+            else:
+                print(f"No results found for {user_input_tosearch}")
         elif user_input == "q":
             print("Ending program")
         elif user_input == "c":
-            a = input("Entry #1 -- ").strip()
-            b = input("Entry #2 -- ").strip()
+            a = input("Entry #1 -- ").strip().lower()
+            b = input("Entry #2 -- ").strip().lower()
 
 
             path_a = tree[0].find_path(a)

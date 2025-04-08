@@ -20,8 +20,17 @@ taxonomy_data = {
                     "Level": "Parvorder",
                     "Common Name": "Baleen Whales",
                     "Balaenidae": { "Level": "Family", "Common Name": "Balaenids" }, # right whale, bowhead whale
-                    "Balaenopteridae": { "Level": "Family", "Common Name": "Rorquals" }, # rorquals
-                    "Eschrichtiidae": { "Level": "Family", "Common Name": "Gray Whales" }, # gray whales
+                    "Balaenopteridae": {
+                        "Level": "Family",
+                        "Common Name": "Rorquals",
+                        "Balaenoptera": { "Level": "Genus", "Common Name": "Balaenoptera" },
+                        "Megaptera": { "Level": "Genus", "Common Name": "Humpback Whales" }
+                    }, # rorquals
+                    "Eschrichtiidae": {
+                        "Level": "Family",
+                        "Common Name": "Gray Whales",
+                        "Eschrichtius": { "Level": "Genus", "Common Name": "Gray Whale"}
+                        }, # gray whales
                 },
                 "Odontoceti": { # toothed whales
                     "Level": "Parvorder",
@@ -29,6 +38,7 @@ taxonomy_data = {
                     "Delphinoidea": { "Level": "Superfamily", "Common Name": "Delphinoids" }, # orca, vaquita, dolphins: Delphinidae, Monodontidae, Phocoenidae
                     "Physeteroidea": { "Level": "Superfamily", "Common Name": "Sperm Whales" }, # sperm whale, pygmy sperm whale, dwarf sperm whale
                     "Phocoenidae": { "Level": "Family", "Common Name": "Porpoises" }, # Porpoises
+                    "Monotonidae": { "Level": "Family", "Common Name": "Monotonidae" },
                     "Platanistidae": { "Level": "Family", "Common Name": "River Dolphins" }, # river dolphins
                     "Ziphiidae": { "Level": "Family", "Common Name": "Beaked Whales" }, # beaked whales
                 }
@@ -41,7 +51,27 @@ taxonomy_data = {
                 "Level": "Suborder",
                 "Common Name": "Dog-Like Carnivores",
                 "Canidae": { "Level": "Family", "Common Name": "Canines" }, # dogs, wolves, foxes
-                "Ursidae": { "Level": "Family", "Common Name": "Bears" }, # bears
+                "Ursidae": {
+                    "Level": "Family",
+                    "Common Name": "Bears",
+                    "Ailuropodinae": {
+                        "Level": "Subfamily",
+                        "Common Name": "Pandas",
+                        "Ailuropoda": { "Level": "Genus", "Common Name": "Panda bears" }
+                    },
+                    "Tremarctinae": {
+                        "Level": "Subfamily",
+                        "Common Name": "Short-faced bear",
+                        "Tremarctos": { "Level": "Genus", "Common Name": "Spectacled bear" }
+                    },
+                    "Ursinae": {
+                        "Level": "Subfamily",
+                        "Common Name": "Ursinae",
+                        "Ursus": { "Level": "Genus", "Common Name": "Common bears" },
+                        "Melursus": { "Level": "Genus", "Common Name": "Sloth bear" },
+                        "Helarctos": { "Level": "Genus", "Common Name": "Sun bear" },
+                    },
+                }, # bears
             },
             "Feliformia": { # cat-like carnivores
                 "Level": "Suborder",
@@ -49,28 +79,18 @@ taxonomy_data = {
                 "Felidae": { # to do: subfamilies of felis and panthera (felinae, pantherinae, etc), so i can do ocelots and stuff
                     "Level": "Family",
                     "Common Name": "Felines",
-                    "Acinonyx": {
-                        "Level": "Genus",
-                        "Common Name": "Cheetah-Like Cats",
-                        "Acinonyx jubatus": { "Level": "Species", "Common Name": "Cheetah" },
+                    "Felinae": {
+                        "Level": "Subfamily",
+                        "Common Name": "Small cats",
+                        "Acinonyx": { "Level": "Genus", "Common Name": "Cheetah-Like Cats" },
+                        "Felis": { "Level": "Genus", "Common Name": "Felis" },
+                        "Puma": { "Level": "Genus", "Common Name": "Pumas" }
                     },
-                    "Felis": {
-                        "Level": "Genus",
-                        "Common Name": "Felis",
-                        "Felis catus": { "Level": "Species", "Common Name": "Domesticated Cat" },
-                        "Felis margarita": { "Level": "Species", "Common Name": "Sand Cat" }
-                    },
-                    "Panthera": {
-                        "Level": "Genus",
-                        "Common Name": "Panthers",
-                        "Panthera pardus": { "Level": "Species", "Common Name": "Jaguar"},
-                        "Panthera leo": { "Level": "Species", "Common Name": "Lion"},
-                        "Panthera onca": { "Level": "Species", "Common Name": "Jaguar"},
-                        "Panthera tigris": { "Level": "Species", "Common Name": "Tiger"},
-                        "Panthera uncia": { "Level": "Species", "Common Name": "Snow Leopard:"},
-
-                    }
-                }, # big cats, small cats, cheetahs
+                    "Pantherinae": {
+                        "Level": "Subfamily",
+                        "Common Name": "Big cats",
+                        "Panthera": { "Level": "Genus", "Common Name": "Panthers" } },
+                },
                 "Hyaenidae": { "Level": "Family", "Common Name": "Hyaenids" }, # hyaenas, aardwolves
             }
         },
@@ -106,8 +126,17 @@ taxonomy_data = {
                 "Common Name": "Equids",
                 "Equus": { "Level": "Genus", "Common Name": "Equus" }
             },
-            "Rhinocerotidae": { "Level": "Family", "Common Name": "Rhinocerotids" },
-            "Tapiridae": { "Level": "Family", "Common Name": "Tapirids" } # tapirs
+            "Rhinocerotidae": { "Level": "Family", "Common Name": "Rhinos" },
+            "Suidae": {
+                "Level": "Family",
+                "Common Name": "Swines",
+                "Sus": { "Level": "Genus", "Common Name": "Pigs" },
+                "Porcula": { "Level": "Genus", "Common Name": "Pygmy hog" },
+                "Hylocherus": { "Level": "Genus", "Common Name": "Giant forest hog" },
+                "Phacochoerus": { "Level": "Genus", "Common Name": "Warthogs" },
+                "Babyrousa": { "Level": "Genus", "Common Name": "Babirusas" },
+            },
+            "Tapiridae": { "Level": "Family", "Common Name": "Tapirs" } # tapirs
         },
         "Pilosa": {
             "Level": "Order",
